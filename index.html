@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/fcom.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#4f46e5" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="IQBAES Lecturer" />
+    <link rel="apple-touch-icon" href="/fcom.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>IQBAES | UPTM Malaysia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.1.1",
+        "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+        "react/": "https://esm.sh/react@^19.1.1/",
+        "vite": "https://esm.sh/vite@^7.0.6",
+        "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^4.7.0",
+        "express": "https://esm.sh/express@^5.1.0",
+        "dotenv": "https://esm.sh/dotenv@^17.2.1",
+        "cors": "https://esm.sh/cors@^2.8.5",
+        "mongoose": "https://esm.sh/mongoose@^8.16.5",
+        "bcryptjs": "https://esm.sh/bcryptjs@^3.0.2",
+        "jsonwebtoken": "https://esm.sh/jsonwebtoken@^9.0.2",
+        "@google/genai": "https://esm.sh/@google/genai@^1.11.0",
+        "uuid": "https://esm.sh/uuid@^11.1.0"
+      }
+    }
+    </script>
+    <link rel="stylesheet" href="/index.css">
+  </head>
+  <body class="bg-slate-100 text-slate-800">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator && location.protocol === 'https:') {
+        // Only register service worker in production (HTTPS)
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      } else if ('serviceWorker' in navigator && location.hostname === 'localhost') {
+        // For localhost development, register but handle errors gracefully
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed (development): ', registrationError);
+              // Don't show errors in development
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

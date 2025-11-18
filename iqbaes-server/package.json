@@ -1,0 +1,43 @@
+{
+  "name": "iqbaes-server",
+  "version": "1.0.0",
+  "description": "Backend server for the IQBAES platform.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "dev": "nodemon server.js",
+    "data:import": "node seeder.js",
+    "data:destroy": "node seeder.js -d",
+    "backup": "node backup-database.js",
+    "migrate": "node run-migration.js",
+    "migrate:rollback": "node rollback-migration.js",
+    "migrate:direct": "node migrate-database.js",
+    "check:db": "node check-database.js",
+    "cleanup:db": "node cleanup-database.js",
+    "clean:empty": "node clean-empty-collections.js",
+    "cleanup:duplicates": "node scripts/cleanup-duplicate-submissions.js"
+  },
+  "author": "AI",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^0.6.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^8.0.1",
+    "express-validator": "^7.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3",
+    "nodemailer": "^7.0.5",
+    "socket.io": "^4.8.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "iqbaes-intelligent-question-bank-and-ai-exam-system",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@google/genai": "^1.11.0",
+    "@react-native-async-storage/async-storage": "^2.2.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "axios": "^1.11.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "expo": "^53.0.20",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.541.0",
+    "mongoose": "^8.16.5",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "socket.io-client": "^4.8.1",
+    "uuid": "^11.1.0",
+    "vite": "^7.0.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}

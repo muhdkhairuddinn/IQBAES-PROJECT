@@ -1,0 +1,98 @@
+/* Mobile Touch Optimizations */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  /* Enable text selection by default */
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+/* Disable text selection ONLY during exams */
+.exam-mode * {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Always allow text selection for input fields and content areas */
+input, textarea, [contenteditable] {
+  -webkit-user-select: text !important;
+  -khtml-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+
+/* Allow text selection in non-exam areas even during exam mode */
+.allow-text-selection,
+.allow-text-selection * {
+  -webkit-user-select: text !important;
+  -khtml-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}
+
+/* Disable text selection for buttons and interactive elements */
+button, .btn, [role="button"] {
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+/* Ensure buttons are touch-friendly */
+button {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+}
+
+/* Smooth scrolling for mobile */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent zoom on input focus */
+input, select, textarea {
+  font-size: 16px;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Ensure full height on mobile */
+  #root {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* PWA specific styles */
+@media (display-mode: standalone) {
+  body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Text selection styling */
+::selection {
+  background-color: #3b82f6;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #3b82f6;
+  color: white;
+}
